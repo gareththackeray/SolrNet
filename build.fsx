@@ -45,7 +45,7 @@ Target "Clean" (fun _ ->
 Target "Build" (fun _ -> mainSln "Rebuild")
 Target "BuildSample" (fun _ -> sampleSln "Rebuild")
 
-let libs = ["SolrNet"; "SolrNet.DSL"; "HttpWebAdapters"; "Castle.Facilities.SolrNetIntegration"; "Ninject.Integration.SolrNet"; "NHibernate.SolrNet"; "StructureMap.SolrNetIntegration"; "AutofacContrib.SolrNet"; "Unity.SolrNetIntegration"]
+let libs = ["SolrNet"; "SolrNet.DSL"; "HttpWebAdapters"; "Castle.Facilities.SolrNetIntegration";]
 let dlls = [for l in libs -> l + ".dll"]
 let dirs = [for l in libs -> l @@ "bin" @@ config]
 
@@ -141,7 +141,7 @@ Target "NuGet.Windsor" (fun _ ->
         "Castle.Facilities.SolrNetIntegration" 
         "SolrNet.Windsor"
         "Windsor facility for SolrNet"
-        ["Castle.Windsor", "[3.0.0.4001]"; solrNetDep]
+        ["Castle.Windsor", "[2.5.1.0]"; solrNetDep]
 )
 
 Target "NuGet.Ninject" (fun _ ->
